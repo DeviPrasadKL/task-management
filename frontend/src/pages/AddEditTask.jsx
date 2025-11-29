@@ -8,7 +8,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { createTask, updateTask, getTask } from '../api/tasks';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { toastSuccess, toastError } from '../utils/toast';
+import { toastSuccess, toastError } from '../Utils/toast';
 
 export default function AddEditTask() {
   const [form, setForm] = useState({ title: '', description: '', status: 'pending' });

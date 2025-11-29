@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getTask } from "../api/tasks";
-import { toastError } from "../utils/toast";
+import { toastError } from "../Utils/toast";
 
 import {
   Card,

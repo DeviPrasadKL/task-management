@@ -37,7 +37,7 @@ export default function App() {
         <ToastContainer
           position="top-right"
           autoClose={3000}
-          theme={theme}  
+          theme={theme}
         />
 
         <Routes>
@@ -50,12 +50,23 @@ export default function App() {
               </RedirectIfAuth>
             }
           />
+
           <Route
             path="/signup"
             element={
               <RedirectIfAuth>
                 <SignUp />
               </RedirectIfAuth>
+            }
+          />
+
+          {/* Base Path Redirect */}
+          <Route
+            path="/"
+            element={
+              localStorage.getItem("token")
+                ? <Navigate to="/dashboard" replace />
+                : <Navigate to="/signin" replace />
             }
           />
 
@@ -89,8 +100,8 @@ export default function App() {
 
           <Route path="/tasks/:id" element={<TaskDetails />} />
 
-          {/* Default Redirect */}
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { signup } from '../api/auth';
-import { toastSuccess, toastError } from '../utils/toast';
+import { toastSuccess, toastError } from '../Utils/toast';
 import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
